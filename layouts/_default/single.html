@@ -1,20 +1,24 @@
-{{ define "main" }}
-{{ if eq .Type "blog" }}{{ if not .Params.menu }}
-<h1>{{ .Title }}</h1>
-<p>
-  <i>
-    <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
-      {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+{{ define "main" }} {{ if eq .Type "blog" }}{{ if not .Params.menu }}
+<h2>{{ .Title }}</h2>
+<small>
+    published
+    <time itemprop="datePublished" datetime='{{ .Date.Format "2006-01-02" }}'>
+      {{ .Date | time.Format .Site.Params.dateFormat }}
     </time>
-  </i>
-</p>
+</small>
+<small>
+    {{ if ne .Date .Lastmod }} | modified
+    <time itemprop="dateModified" datetime='{{ .Lastmod.Format "2006-01-02" }}'>
+      {{ .Lastmod | time.Format .Site.Params.dateFormat }}
+    </time>
+    {{end}}
+</small>
+</br />
+<small>
+  {{ with .GetTerms "tags" }}tagged {{ range . }}
+  <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+  {{ end }} {{ end}}
+</small>
 {{ end }}{{ end }}
-<content>
-  {{ .Content }}
-</content>
-<p>
-  {{ range (.GetTerms "tags") }}
-  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
-  {{ end }}
-</p>
+<slot>{{ .Content }}</slot>
 {{ end }}

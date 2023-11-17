@@ -1,38 +1,38 @@
 {{ define "main" }}
 <content>
+  <small
+    ><i
+      >Hey, just reminding that I feel anxious releasing stuff to the public.
+      Please be gentle.</i
+    ></small
+  >
   {{ if .Data.Singular }}
-  <h3 style="margin-bottom:0">Filtering for "{{ .Title }}"</h3>
-  <small>
-    <a href="{{ "blog" | relURL }}">Remove filter</a>
-  </small>
+  <h3>Posts tagged "{{ .Title }}"</h3>
   {{ end }}
   <ul class="blog-posts">
     {{ range .Pages }}
     <li>
       <span>
-        <i>
-          <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
-            {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
-          </time>
-        </i>
+        <time
+          itemprop="datePublished"
+          datetime='{{ .Date.Format "2006-01-02" }}'
+        >
+          {{ .Date | time.Format .Site.Params.dateFormat }}
+        </time>
       </span>
       <a href="{{ .Permalink }}">{{ .Title }}</a>
     </li>
     {{ else }}
-    <li>
-      No posts yet
-    </li>
+    <li>No posts yet</li>
     {{ end }}
   </ul>
-  {{ if .Data.Singular }}
-  {{else}}
-    <small>
-      <div>
-        {{ range .Site.Taxonomies.tags }}
-        <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>&nbsp;
-        {{ end }}
-      </div>
-    </small>
-    {{ end }}
+  {{ if .Data.Singular }} {{else}}
+  <small>
+    <div>
+      {{ with .Site.Taxonomies.tags}} Posts tagged {{ range .}}
+      <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ end }} {{ end }}
+    </div>
+  </small>
+  {{ end }}
 </content>
 {{ end }}

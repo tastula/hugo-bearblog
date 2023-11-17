@@ -5,11 +5,11 @@
     padding: 20px;
     max-width: 720px;
     text-align: left;
-    background-color: #fff;
+    color: #111;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    line-height: 1.5;
-    color: #444;
+    line-height: 1.6;
+    background-color: #eee;
   }
 
   h1,
@@ -20,17 +20,41 @@
   h6,
   strong,
   b {
-    color: #222;
+    color: #111;
+  }
+
+  span.purple {
+    background-color: #caa4ea;
+    padding: 2px;
+  }
+  span.blue {
+    background-color: #9fd4f2;
+    padding: 2px;
+  }
+  span.green {
+    background-color: #8bc965;
+    padding: 2px;
+  }
+  span.red {
+    background-color: #ff9385;
+    padding: 2px;
+  }
+  span.gold {
+    background-color: #ffd36c;
+    padding: 2px;
   }
 
   a {
-    color: #3273dc;
-    /*color: #ff5e6c;*/
+    color: #333333;
+    text-decoration-thickness: 2px;
   }
 
   .title {
+    font-size: 60%;
     text-decoration: none;
     border: 0;
+    display: flex;
+    align-items: center;
   }
 
   .title span {
@@ -50,16 +74,23 @@
     font-size: 16px;
   }
 
-  content {
-    line-height: 1.6;
-  }
-
   table {
     width: 100%;
   }
 
   img {
     max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  img.profile {
+    max-width: 256px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   code {
@@ -87,7 +118,7 @@
   }
 
   blockquote {
-    border-left: 1px solid #999;
+    border-left: 1px solid;
     color: #222;
     padding-left: 20px;
     font-style: italic;
@@ -108,7 +139,6 @@
     font-size: small;
   }
 
-  /* blog posts */
   ul.blog-posts {
     list-style-type: none;
     padding: unset;
@@ -122,14 +152,10 @@
     flex: 0 0 130px;
   }
 
-  ul.blog-posts li a:visited {
-    color: #8b6fcb;
-  }
-
   @media (prefers-color-scheme: dark) {
     body {
-      background-color: #333;
-      color: #ddd;
+      background-color: #222;
+      color: #eee;
     }
 
     h1,
@@ -143,8 +169,24 @@
       color: #eee;
     }
 
+    span.purple {
+      background-color: #4e008e;
+    }
+    span.blue {
+      background-color: #1a466e;
+    }
+    span.green {
+      background-color: #00583a;
+    }
+    span.red {
+      background-color: #942503;
+    }
+    span.gold {
+      background-color: #85600a;
+    }
+
     a {
-      color: #8cc2dd;
+      color: #bebebe;
     }
 
     code {
@@ -169,5 +211,4 @@
       color: #aaa;
     }
   }
-
 </style>
