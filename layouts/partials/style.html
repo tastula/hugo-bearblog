@@ -5,48 +5,26 @@
     padding: 20px;
     max-width: 720px;
     text-align: left;
-    color: #111;
     word-wrap: break-word;
     overflow-wrap: break-word;
     line-height: 1.6;
-    background-color: #eee;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  strong,
-  b {
-    color: #111;
+  body,
+  h1 {
+    background-color: #1a2022; /* #2c3639 40%d */
+    color: #eae7df; /* #dcd7c9 40%l */
   }
 
-  span.purple {
-    background-color: #caa4ea;
-    padding: 2px;
-  }
-  span.blue {
-    background-color: #9fd4f2;
-    padding: 2px;
-  }
-  span.green {
-    background-color: #8bc965;
-    padding: 2px;
-  }
-  span.red {
-    background-color: #ff9385;
-    padding: 2px;
-  }
-  span.gold {
-    background-color: #ffd36c;
-    padding: 2px;
+  a,
+  blockquote {
+    color: #c7b09d; /* a27b5c 40%l */
   }
 
-  a {
-    color: #333333;
-    text-decoration-thickness: 2px;
+  textarea,
+  input {
+    background-color: #252525;
+    color: #ddd;
   }
 
   .title {
@@ -74,8 +52,9 @@
     font-size: 16px;
   }
 
-  table {
-    width: 100%;
+  th,
+  td {
+    padding: 0 16px;
   }
 
   img {
@@ -95,11 +74,11 @@
 
   code {
     padding: 2px 5px;
-    background-color: #f2f2f2;
+    background-color: #777;
   }
 
   pre code {
-    color: #222;
+    color: #ddd;
     display: block;
     padding: 20px;
     white-space: pre-wrap;
@@ -119,7 +98,6 @@
 
   blockquote {
     border-left: 1px solid;
-    color: #222;
     padding-left: 20px;
     font-style: italic;
   }
@@ -130,7 +108,7 @@
   }
 
   .helptext {
-    color: #777;
+    color: #aaa;
     font-size: small;
   }
 
@@ -153,62 +131,5 @@
   }
 
   @media (prefers-color-scheme: dark) {
-    body {
-      background-color: #222;
-      color: #eee;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    strong,
-    b {
-      color: #eee;
-    }
-
-    span.purple {
-      background-color: #4e008e;
-    }
-    span.blue {
-      background-color: #1a466e;
-    }
-    span.green {
-      background-color: #00583a;
-    }
-    span.red {
-      background-color: #942503;
-    }
-    span.gold {
-      background-color: #85600a;
-    }
-
-    a {
-      color: #bebebe;
-    }
-
-    code {
-      background-color: #777;
-    }
-
-    pre code {
-      color: #ddd;
-    }
-
-    blockquote {
-      color: #ccc;
-    }
-
-    textarea,
-    input {
-      background-color: #252525;
-      color: #ddd;
-    }
-
-    .helptext {
-      color: #aaa;
-    }
   }
 </style>
